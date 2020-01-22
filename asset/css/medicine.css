@@ -294,6 +294,10 @@ a {
   border-radius: 1px;
   position: absolute;
   top: -6px;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
 }
 
 .hamburger_logo {
@@ -304,6 +308,8 @@ a {
   border-radius: 1px;
   position: relative;
   left: -5px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
 }
 
 .hamburger_logo::after {
@@ -315,6 +321,27 @@ a {
   border-radius: 1px;
   position: absolute;
   top: 6px;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+}
+
+.is_cancel_logo::before {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  top: 0px;
+}
+
+.is_cancel_logo {
+  width: 0;
+  height: 0;
+}
+
+.is_cancel_logo::after {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  top: 0px;
 }
 
 /*
@@ -323,11 +350,14 @@ a {
 
 .global_nav {
   transform: translateY(-200%);
+  -webkit-transform: translateY(-200%);
   transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
 }
 
 .is_drower_active {
   transform: translateY(30px);
+  -webkit-transform: translateY(30px);
 }
 
 .nav_list {
@@ -424,7 +454,6 @@ a {
 .date {
   text-align: center;
   vertical-align: top;
-  padding: 0.2rem 0.6rem;
   background-color: white;
 }
 
@@ -438,8 +467,7 @@ a {
 
 .link_date {
   display: inline-block;
-  width: 100%;
-  height: 100%;
+  padding: 0.2rem 0.6rem;
 }
 
 .list_container {
@@ -648,13 +676,15 @@ a {
   display: inline-block;
   width: 100%;
   max-width: 130px;
-  background-color: rgb(219, 213, 213);
+  color: #fff;
+  background-color: rgb(39, 178, 196);
   padding: 0.25rem 0;
   border-radius: 0.5rem;
 }
 
 .page_link:hover {
   background-color: #fff;
+  background-color: rgb(55, 119, 214);
 }
 
 /*
@@ -665,24 +695,25 @@ a {
   padding-top: 2rem;
 }
 
-.history_form {
+.history_form_container {
   background-color: rgb(243, 239, 239);
   padding: 1.5rem 1rem;
-  max-width: 300px;
+  max-width: 450px;
   margin: 2rem auto;
 }
 
+.history_form {
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
 .history_dt {
-  display: inline-block;
-  width: 15%;
-  padding-left: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .history_dd {
-  display: inline-block;
-  width: 100%;
-  max-width: 200px;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
   margin-bottom: 1rem;
 }
 
@@ -694,9 +725,14 @@ a {
   max-width: 200px;
 }
 
+.history_submit_box {
+  width: 220px;
+}
+
 .history_submit {
   padding: 0.25rem 0;
   width: 150px;
+  background-color: #fff;
 }
 
 .history_submit:hover {
@@ -775,6 +811,7 @@ a {
 
   .global_nav {
     transform: translateY(0);
+    -webkit-transform: translateY(0);
     width: 75%;
   }
 
@@ -820,5 +857,32 @@ a {
     width: 65%;
     border: none;
     padding-left: 3rem;
+  }
+
+  /*
+    history.php
+  */
+  .history_form_container {
+    padding: 2rem 1rem;
+  }
+
+  .history_form {
+    max-width: 390px;
+  }
+
+  .history_dt {
+    display: inline-block;
+    width: 30%;
+    padding-left: 1rem;
+  }
+
+  .history_dd {
+    display: inline-block;
+    width: 60%;
+  }
+
+  .history_submit_box {
+    width: 390px;
+    margin-top: 0.5rem;
   }
 }

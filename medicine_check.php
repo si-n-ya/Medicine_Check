@@ -25,6 +25,7 @@ if (isset($_REQUEST['id']) || isset($_REQUEST['t'])) {
     <title>スケジュール帳</title>
     <link rel="stylesheet" href="asset/css/medicine.css">
 </head>
+
 <body>
     <!-- ヘッダーの読み込み -->
     <?php include(__DIR__ . '/_inc/header.php'); ?>
@@ -32,7 +33,7 @@ if (isset($_REQUEST['id']) || isset($_REQUEST['t'])) {
         <div class="bg_mask">
             <main class="container check_container margin_top">
                 <div class="flex_container">
-                    <h1 class="title_shape title_white">登録リスト</h1>
+                    <h1 class="title_shape title_white">お薬服用チェック</h1>
                     <p class="back_box btn_center">
                         <a href="index.php" class="btn back">メニューへ戻る</a>
                     </p>
@@ -140,4 +141,5 @@ if (isset($_REQUEST['id']) || isset($_REQUEST['t'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="asset/js/stock.js"></script>
 </body>
+
 </html>

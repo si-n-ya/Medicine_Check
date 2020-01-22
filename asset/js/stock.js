@@ -6,10 +6,20 @@ $(function() {
   */
   // ドロワー開閉
   $(".btn_hamburger").click(function() {
-    $(".global_nav").toggleClass("is_drower_active");
-    $(".header")
-      .toggleClass("is_header_fixed")
-      .toggleClass("is_header_full_open");
+    let logo = $(this).find(".hamburger_logo");
+    if ($(logo).hasClass("is_cancel_logo")) {
+      $(".global_nav").removeClass("is_drower_active");
+      $(".header")
+        .removeClass("is_header_fixed")
+        .removeClass("is_header_full_open");
+      $(logo).removeClass("is_cancel_logo");
+    } else {
+      $(".global_nav").addClass("is_drower_active");
+      $(".header")
+        .addClass("is_header_fixed")
+        .addClass("is_header_full_open");
+      $(logo).addClass("is_cancel_logo");
+    }
   });
 
   /*

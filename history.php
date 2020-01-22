@@ -26,34 +26,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>薬の使用履歴</title>
+    <title>お薬服用履歴</title>
     <link rel="stylesheet" href="asset/css/medicine.css">
 </head>
+
 <body>
     <?php include(__DIR__ . '/_inc/header.php'); ?>
     <div class="container history_container">
         <main class="container">
             <div class="flex_container">
-                <h1 class="title_shape conf_title_black">薬の使用履歴</h1>
+                <h1 class="title_shape conf_title_black">お薬服用履歴</h1>
                 <p class="back_box btn_right">
                     <a href="index.php" class="btn back">メニューへ戻る</a>
                 </p>
             </div> <!-- .flex_container -->
-            <form action="" method="post" class="history_form">
-                <dl>
-                    <dt class="history_dt">名前</dt>
-                    <dd class="history_dd">
-                        <input type="text" name="search_name" class="input_text input_history">
-                    </dd>
-                    <dt class="history_dt">日付</dt>
-                    <dd class="history_dd">
-                        <input type="date" name="search_date" class="input_text input_history">
-                    </dd>
-                </dl>
-                <p class="history_submit_box btn_center">
-                    <input type="submit" name="submit" value="検索" class="submit history_submit">
-                </p>
-            </form>
+            <div class="history_form_container">
+                <form action="" method="post" class="history_form">
+                    <dl>
+                        <dt class="history_dt">お薬の名前</dt>
+                        <dd class="history_dd">
+                            <input type="text" name="search_name" class="input_text input_history">
+                        </dd>
+                        <dt class="history_dt">服用した日付</dt>
+                        <dd class="history_dd">
+                            <input type="date" name="search_date" class="input_text input_history">
+                        </dd>
+                    </dl>
+                    <p class="history_submit_box btn_center">
+                        <input type="submit" name="submit" value="検索" class="submit history_submit">
+                    </p>
+                </form>
+            </div>
             <!-- 検索結果が0の時 -->
             <?php if (count($search_result) < 1 && isset($search_result)): ?>
             <p class="error history_error">*検索結果はありません</p>
@@ -62,11 +65,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <table border="1" class="history_table">
                 <thead>
                     <tr>
+                        <th></th>
                         <th>日付</th>
                         <th>時間</th>
                         <th>名前</th>
                         <th>量</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -106,17 +109,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p colspan="5" class="btn_box btn_center history_delete_box">
                     <button class="btn history_delete">削除</button>
                 </p>
-            </div>  <!-- .history_flex_box -->
+            </div> <!-- .history_flex_box -->
             <!-- 検索をしていない時 -->
             <?php elseif (!isset($_POST['submit'])) : ?>
             <table border="1" class="history_table">
                 <thead>
                     <tr>
+                        <th></th>
+
                         <th>日付</th>
                         <th>時間</th>
                         <th>名前</th>
                         <th>量</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -155,13 +159,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p colspan="5" class="btn_box btn_center history_delete_box">
                     <button class="btn history_delete">削除</button>
                 </p>
-            </div>  <!-- .history_flex_box -->
+            </div> <!-- .history_flex_box -->
             <?php endif; ?>
- 
+
         </main>
     </div> <!-- .history_container -->
     <input type="hidden" class="token" name="token" value="<?= h($_SESSION['token']); ?>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="asset/js/stock.js"></script>
 </body>
+
 </html>

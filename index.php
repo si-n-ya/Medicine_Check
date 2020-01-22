@@ -10,6 +10,7 @@ $today = $today->format('Y-m-d');
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@ $today = $today->format('Y-m-d');
     <title>メニュー</title>
     <link rel="stylesheet" href="asset/css/medicine.css">
 </head>
+
 <body>
     <!-- header読み込み -->
     <?php include(__DIR__ . '/_inc/header.php'); ?>
@@ -25,16 +27,16 @@ $today = $today->format('Y-m-d');
             <h1 class="btn_center main_menu_title">メインメニュー</h1>
             <ul class="list_container">
                 <li class="btn_center">
-                    <a href="medicine_check.php?id=<?= h($today); ?>" class="btn btn_shape">お薬服用チェック</a>
+                    <a href="regist_form.php" class="btn btn_shape">お薬登録</a>
                 </li>
                 <li class="btn_center">
-                    <a href="regist_form.php" class="btn btn_shape">お薬登録</a>
+                    <a href="medicine_check.php?id=<?= h($today); ?>" class="btn btn_shape">お薬服用チェック</a>
                 </li>
                 <li class="btn_center">
                     <a href="list.php" class="btn btn_shape">登録リスト</a>
                 </li>
                 <li class="btn_center">
-                    <a href="history.php" class="btn btn_shape">薬の使用履歴</a>
+                    <a href="history.php" class="btn btn_shape">お薬服用履歴</a>
                 </li>
             </ul>
         </main>
@@ -42,4 +44,5 @@ $today = $today->format('Y-m-d');
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <script src="asset/js/stock.js"></script>
 </body>
+
 </html>

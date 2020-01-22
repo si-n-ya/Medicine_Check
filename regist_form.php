@@ -192,7 +192,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div> <!-- .flexiblebox -->
             <!-- 一回に服用する量 -->
             <div class="d_container flexiblebox">
-                <dt class="dt <?= isset($_REQUEST['id'])? 'conf_dt_bg': 'regist_dt'; ?>"><label
+                <dt class="dt <?= isset($_REQUEST['id'])? 'conf_dt_bg': 'regist_dt_bg'; ?>"><label
                         for="use_num">一回に服用する量</label></dt>
                 <dd class="dd">
                     <!-- 薬の編集 -->
