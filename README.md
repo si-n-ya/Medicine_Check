@@ -67,7 +67,7 @@
 
 ## 制作環境
 
- 言語 &middot;&middot;&middot; HTML5、CSS3、JavaScript、PHP7.2.17
+ 言語 &middot;&middot;&middot; HTML5、CSS3、JavaScript、PHP7.3.8	
  
 ---
  ライブラリ &middot;&middot;&middot; jQuery3.4.1(Ajax含む)
