@@ -17,7 +17,7 @@
 * CSRF対策  
 
 ## 使用方法
- お薬管理アプリのページ毎に紹介していきます。
+ お薬管理アプリをページ毎に紹介していきます。
 
 ### トップページ
  <img src="https://user-images.githubusercontent.com/56374207/72958457-a221ff00-3dea-11ea-8743-53912747bc8f.jpg" alt="お薬管理アプリのトップページです" width="400px">
