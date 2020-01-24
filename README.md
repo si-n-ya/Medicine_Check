@@ -76,7 +76,7 @@
  ライブラリ &middot;&middot;&middot; jQuery3.4.1(Ajax含む)
  
 ---
- データベース &middot;&middot;&middot; MySQL5.7.x  
+ データベース &middot;&middot;&middot; MySQL5.7.27  
 
 ---
  OS &middot;&middot;&middot; macOS Catalina  
