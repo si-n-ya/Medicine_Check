@@ -1,5 +1,8 @@
 # お薬管理アプリ
 
+## DEMO
+![output_medicine_check](https://user-images.githubusercontent.com/56374207/73052126-b2f47280-3ec7-11ea-86d0-fa6a2a49bd67.gif)
+
 ## 概要
  「お薬管理アプリ」は、何日の何時に服用する薬をチェック一つで管理でき、チェックの付け外しによって、薬の残り数の増減もできます。  
 また、服用した薬の履歴も閲覧 &middot; 検索 &middot; 削除でき、服用した薬の名前や日付を簡単に知ることができます。
@@ -63,7 +66,7 @@
 
 ## お薬管理アプリへのリンク
  こちらが実際の制作物になります。  
- [お薬管理アプリ](https://sinyaweb.com/medicine_check/)
+ __[お薬管理アプリ](https://sinyaweb.com/medicine_check/)__
 
 ## 制作環境
 
