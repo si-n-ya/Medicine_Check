@@ -1,7 +1,7 @@
 # お薬管理アプリ
 
 ## DEMO
-![output_medicine_check](https://user-images.githubusercontent.com/56374207/73052126-b2f47280-3ec7-11ea-86d0-fa6a2a49bd67.gif)
+![お薬管理アプリのデモ](https://user-images.githubusercontent.com/56374207/73080478-3bdfce00-3f09-11ea-8a64-d39ff54c2bb1.gif)
 
 ## 概要
  「お薬管理アプリ」は、何日の何時に服用する薬をチェック一つで管理でき、チェックの付け外しによって、薬の残り数の増減もできます。  
