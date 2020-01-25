@@ -115,7 +115,7 @@ $(function() {
         "lib/ajax.php",
         {
           id: id,
-          mode: "delete",
+          mode: "list_delete",
           token: token
         },
         function() {
@@ -132,6 +132,7 @@ $(function() {
   $(".history_container").on("click", ".history_delete", function() {
     let token = $(".token").val();
     if (confirm("本当に削除しますか？")) {
+      // 複数削除もあるため、each()でループ
       $(".check:checked").each(function() {
         let id = $(this).val();
         $.post(

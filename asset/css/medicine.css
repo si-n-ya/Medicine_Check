@@ -422,7 +422,9 @@ a {
 
 .table {
   margin: 1rem auto;
-  border: 1px solid #ddd;
+  background-color: rgb(204, 202, 202);
+  border-collapse: separate;
+  border-spacing: 1px;
 }
 
 .calender_head,
@@ -454,7 +456,7 @@ a {
 .date {
   text-align: center;
   vertical-align: top;
-  background-color: white;
+  background-color: #fff;
 }
 
 .gray {

@@ -359,8 +359,8 @@ class Medicine
                     return $this->_check();
                 case 'remove_check':
                     return $this->_check();
-                case 'delete':
-                    return $this->_delete();
+                case 'list_delete':
+                    return $this->_list_delete();
                 case 'history_delete':
                     return $this->_history_delete();
         }
@@ -520,16 +520,31 @@ class Medicine
     }
 
     // 登録リストの削除(list.php)
-    private function _delete()
+    private function _list_delete()
     {
         if (!isset($_POST['id'])) {
-            throw new \Exception('[delete]のidが存在しません');
+            throw new \Exception('[list_delete]のidが存在しません');
         }
         try {
             $this->_db->beginTransaction();
 
-            $sql = "DELETE i.*, w.* FROM items AS i JOIN when_use AS w ON i.id=item_id WHERE item_id=?";
+            // 削除する薬のstateテーブルが空か調べるため
+            $sql = "SELECT * FROM state WHERE item__id=?";
             $stmt = $this->_db->prepare($sql);
+            $stmt->execute([
+                $_POST['id']
+            ]);
+            $result = $stmt->fetch();
+
+            // 削除する薬のstateテーブルが空の時、itemテーブルとwhen_useテーブルを削除
+            if (empty($result)) {
+                $sql = "DELETE i.*, w.* FROM items AS i JOIN when_use AS w ON i.id=item_id WHERE item_id=?";
+                $stmt = $this->_db->prepare($sql);
+            // 削除する薬のstateテーブルが空ではない時、stateテーブルも含めて削除
+            } else {
+                $sql = "DELETE i.*, w.*, s.* FROM items AS i JOIN when_use AS w ON i.id=item_id JOIN state AS s ON w.item_id=s.item__id WHERE item_id=?";
+                $stmt = $this->_db->prepare($sql);
+            }
             $stmt->execute([
                 $_POST['id']
             ]);
