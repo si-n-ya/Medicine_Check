@@ -39,7 +39,7 @@ if (isset($_REQUEST['id']) || isset($_REQUEST['t'])) {
                     </p>
                 </div> <!-- .flex_container -->
                 <!-- カレンダー -->
-                <table border="1" class="table">
+                <table border="0" class="table">
                     <thead>
                         <tr>
                             <th class="calender_head"><a href="medicine_check.php?t=<?= h($medi->prev); ?>">&laquo</a>
